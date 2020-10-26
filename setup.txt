@@ -1,0 +1,12 @@
+1)install requirements using pip install on the terminal
+2)while deploying at production level , that is , heroku or ngrok or etc. :
+          make this change in app.py:
+                    in last two line : if __name__ == '__main__':
+                                            app.run(debug=True)
+                    change True to False , that is , last 2 line should look like:
+                                       if __name__ == '__main__':
+                                            app.run(debug=False)
+3) in terminal type :
+           flask run 
+   The app.py will start running on  local host,  for eg : http://127.0.0.1:5000/ 
+   use this link to call API
