@@ -13,11 +13,6 @@ from util import plot_roc
 class NLPModel(object):
 
     def __init__(self):
-        """Simple NLP
-        Attributes:
-            clf: sklearn classifier model
-            vectorizor: TFIDF vectorizer or similar
-        """
         self.clf = MultinomialNB()
         # self.vectorizer = TfidfVectorizer(tokenizer=spacy_tok)
         self.vectorizer = TfidfVectorizer()
@@ -58,7 +53,7 @@ class NLPModel(object):
             pickle.dump(self.vectorizer, f)
             print("Pickled vectorizer at {}".format(path))
 
-    def pickle_clf(self, path='chalicelib/models/SentimentClassifier.pkl'):
+    def pickle_clf(self, path='chalicelib/models/model.pkl'):
         """Saves the trained classifier for future use.
         """
         with open(path, 'wb') as f:
