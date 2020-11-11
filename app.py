@@ -22,7 +22,7 @@ parser = reqparse.RequestParser()
 parser.add_argument('query')
 
 
-class PredictSentiment(Resource):
+class Predict(Resource):
     def get(self):
         # use parser and find the user's query
         args = parser.parse_args()
