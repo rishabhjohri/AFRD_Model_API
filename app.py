@@ -9,7 +9,7 @@ api = Api(app)
 
 model = NLPModel()
 
-clf_path = 'lib/models/SentimentClassifier.pkl'
+clf_path = 'lib/models/model.pkl'
 with open(clf_path, 'rb') as f:
     model.clf = pickle.load(f)
 
@@ -50,7 +50,7 @@ class PredictSentiment(Resource):
 
 # Setup the Api resource routing here
 # Route the URL to the resource
-api.add_resource(PredictSentiment, '/')
+api.add_resource(Predict, '/')
 
 
 if __name__ == '__main__':
